@@ -1,15 +1,17 @@
 <template>
 <div id="bigbox" class="bigbox">
-        <div class="span-div">
-            <span>~Today I need do~</span>
-        </div>
+        <span>~Today I need do~</span>
+        <!-- <input type="text">
+        <button>submit</button> -->
+        <InputClick/>
 </div>
 </template>
 <script>
+import InputClick from './InputClick.vue';
 export default {
-  el:'bigbox',
-  props: {
-  }
+    el: "bigbox",
+    props: {},
+    components: { InputClick }
 }
 </script>
 <style scoped>
@@ -20,13 +22,14 @@ export default {
     border-radius:10%;
     margin: 0 auto;
     margin-top: 100px;
+    border:1px solid rgb(240,240,240);
 }
-.span-div{
-    background-color: aqua;
-    top:400px;
-}
-.span-div span{
+span{
+    /* position: absolute; */
     margin-top: 50px;
     font-weight: 600;
+    display:block;
+    width: 400px;
+    text-align: center;
 }
 </style>
