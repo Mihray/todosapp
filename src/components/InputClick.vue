@@ -1,24 +1,34 @@
 <template id="inputclick">
   <div id="inputclick" class="inputclick">
       <from action="">
-        <input type="text" v-model.lazy="message">
+        <input type="text" v-model="message">
         <button v-on:click="inputclick">submit</button>
       </from>
   </div>
-  <span>{{message}}</span>
+  <ul>
+    <li v-for="(list,index) in lists" v-bind:key="list.id">{{message}}
+    <button v-on:click="lists.splice(index,1)">删除</button></li>
+  </ul>
 </template>
 <script>
 export default {
-  el:'inputclick',
+  el:'#inputclick',
     data(){
         return{
             message:'',
-            inputmessage:''
+            lists:[
+                {id:1,title:'学习'},
+            ],
+            nextTodoId:2
         }
     },
   methods: {
     inputclick(){
-        
+        this.lists.push({
+            id:this.nextTodoId++,
+            title:this.message
+        })
+        this.message=''
         console.log('button')
     }
   },
