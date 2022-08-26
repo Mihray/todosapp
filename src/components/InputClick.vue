@@ -1,18 +1,15 @@
-<template id="inputclick">
+<template >
   <div id="inputclick" class="inputclick">
-      <from action="">
         <input type="text" v-model="message">
         <button v-on:click="inputclick">submit</button>
-      </from>
   </div>
   <ul>
-    <li v-for="(list,index) in lists" v-bind:key="list.id">{{message}}
-    <button v-on:click="lists.splice(index,1)">删除</button></li>
+    <li v-for="(item, index) in lists" v-bind:key="item.id">item:{{item}};数组下班:{{index}}
+    <button v-on:click="delete(item)">删除</button></li>
   </ul>
 </template>
 <script>
 export default {
-  el:'#inputclick',
     data(){
         return{
             message:'',
@@ -23,6 +20,10 @@ export default {
         }
     },
   methods: {
+    delete(i){
+        this.lists.filter()
+    }
+    ,
     inputclick(){
         this.lists.push({
             id:this.nextTodoId++,
