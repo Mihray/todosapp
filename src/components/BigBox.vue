@@ -9,7 +9,6 @@
 <script>
 import InputClick from './InputClick.vue';
 export default {
-    el: "bigbox",
     props: {},
     components: { InputClick }
 }
