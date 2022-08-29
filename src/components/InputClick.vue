@@ -5,7 +5,7 @@
   </div>
   <ul>
     <li v-for="(item, index) in lists" v-bind:key="item.id">item:{{item}};数组下标:{{index}}
-    <button v-on:click="delete(item)">删除</button></li>
+    <button v-on:click="removeitem">删除</button></li>
   </ul>
 </template>
 <script>
@@ -20,10 +20,20 @@ export default {
         }
     },
   methods: {
-    delete(i){
-        this.lists.filter(function(){
+    removeitem(){
+        // this.lists.filter(function(){
+        // })
+        // for( let i=0;i<this.lists.length;i++){
+        //     let  a=this.lists[i];
+        //     a.splice();
+        //     console.log('删除成功')
+        // }
+        for(let item of this.lists){
+            let  a=item;
+             a.romove(a);
+             console.log('删除成功')
+        }
 
-        })
     }
     ,
     inputclick(){
