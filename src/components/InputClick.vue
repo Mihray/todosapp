@@ -4,7 +4,7 @@
         <button v-on:click="inputclick">submit</button>
   </div>
   <ul>
-    <li v-for="(item, index) in lists" v-bind:key="item.id">item:{{item}};数组下班:{{index}}
+    <li v-for="(item, index) in lists" v-bind:key="item.id">item:{{item}};数组下标:{{index}}
     <button v-on:click="delete(item)">删除</button></li>
   </ul>
 </template>
@@ -21,7 +21,9 @@ export default {
     },
   methods: {
     delete(i){
-        this.lists.filter()
+        this.lists.filter(function(){
+
+        })
     }
     ,
     inputclick(){
