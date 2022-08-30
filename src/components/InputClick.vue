@@ -3,9 +3,10 @@
         <input type="text" v-model="message">
         <button v-on:click="inputclick">submit</button>
   </div>
-  <ul>
-    <li v-for="(item, index) in lists" v-bind:key="item.id">item:{{item}};数组下标:{{index}}
-    <button v-on:click="removeitem">删除</button></li>
+  <ul v-for="item in lists" v-bind:key="item.id">
+    <li>{{item.title}}
+    <!-- item:{{item}};数组下标:{{index}} -->
+    <button v-on:click="del(item.id)">删除</button></li>
   </ul>
 </template>
 <script>
@@ -20,20 +21,24 @@ export default {
         }
     },
   methods: {
-    removeitem(){
-        // this.lists.filter(function(){
+    del:function(id){
+        var index=null;
+        // this.lists.some((item,i)=>{
+            //当遍历item的id等于传入item的id，则相当于找到了数组索引的位置i
+        //     if(item,id===id){
+        //         index=i;
+        //         console.log("id="+id+",数组的索引为"+index);
+        //         return true;
+        //     }
         // })
-        // for( let i=0;i<this.lists.length;i++){
-        //     let  a=this.lists[i];
-        //     a.splice();
-        //     console.log('删除成功')
-        // }
-        for(let item of this.lists){
-            let  a=item;
-             a.romove(a);
-             console.log('删除成功')
-        }
-
+        index=this.lists.findIndex(item=>{
+            //当遍历item的id等于传入item的id，则相当于找到了数组索引的位置i
+            
+            if(item.id===id)
+            return true;
+        })
+        console.log("id="+id+",数组的索引为"+index);
+        this.lists.splice(index,1)
     }
     ,
     inputclick(){
