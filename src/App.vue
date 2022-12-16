@@ -17,14 +17,14 @@ export default {
 </script>
 
 <style>
-#app {
-  /* font-family: Avenir, Helvetica, Arial, sans-serif;
+/* #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50; */
-  /* margin-top: 60px; */
-}
+  color: #2c3e50; 
+   margin-top: 60px;
+} */
 body{
   background-color: rgb(251,182,177);
   padding: 0;

@@ -12,6 +12,7 @@ export default {
     props: {},
     components: { InputClick }
 }
+
 </script>
 <style scoped>
 .bigbox{

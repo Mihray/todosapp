@@ -21,7 +21,7 @@ export default {
         return {
             message: "",
             lists: [
-                { id: 1, title: "学习", istextli: false },
+                // { id: 1, title: "学习", istextli: false },
             ],
             nextTodoId: 2,
         };
